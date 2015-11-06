@@ -2,11 +2,7 @@ import Bacon from "baconjs"
 
 
 export default {
-  keys, values, zipObject, zip, isArray, isEmpty, isObs, contains, find
-}
-
-function isObs(x) {
-  return x && x instanceof Bacon.Observable
+  keys, values, zipObject, zip, isArray, isEmpty, contains, find
 }
 
 function isArray(x) {
