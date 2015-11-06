@@ -1,8 +1,8 @@
 
 module.exports = {
-  Combinator: require("./src/baconjs/Combinator"),
-  combineVDOM: require("./src/baconjs/combineVDOM"),
-  createComponent: require("./src/baconjs/createComponent"),
-  createContainer: require("./src/baconjs/createContainer")
+  Combinator: require("./lib/baconjs/Combinator"),
+  combineVDOM: require("./lib/baconjs/combineVDOM"),
+  createComponent: require("./lib/baconjs/createComponent"),
+  createContainer: require("./lib/baconjs/createContainer")
 }
 
