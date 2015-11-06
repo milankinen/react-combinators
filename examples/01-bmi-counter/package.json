@@ -1,0 +1,26 @@
+{
+  "name": "react-combinators-bmi-counter",
+  "version": "0.0.1",
+  "author": "Matti Lankinen <m.lankinen@iki.fi>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "baconjs": "browserify bacon.js -t babelify > bundle.js && open index.html",
+    "watch": "watchify -v -t babelify -o bundle.js"
+  },
+  "dependencies": {
+    "babel": "5.8.29",
+    "baconjs": "0.7.79",
+    "react-combinators": "file:../..",
+    "react": "0.14.1",
+    "react-dom": "0.14.1"
+  },
+  "engines": {
+    "node": "4.2.x"
+  },
+  "devDependencies": {
+    "babelify": "6.4.0",
+    "browserify": "12.0.1",
+    "watchify": "3.6.0"
+  }
+}
