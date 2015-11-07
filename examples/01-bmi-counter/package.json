@@ -6,13 +6,15 @@
   "private": false,
   "scripts": {
     "baconjs": "browserify bacon.js -t babelify > bundle.js && open index.html",
+    "kefir": "browserify kefir.js -t babelify > bundle.js && open index.html",
     "watch": "watchify -v -t babelify -o bundle.js"
   },
   "dependencies": {
     "babel": "5.8.29",
     "baconjs": "0.7.79",
-    "react-combinators": "file:../..",
+    "kefir": "^3.1.0",
     "react": "0.14.1",
+    "react-combinators": "file:../..",
     "react-dom": "0.14.1"
   },
   "engines": {
