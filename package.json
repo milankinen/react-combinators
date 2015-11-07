@@ -8,7 +8,7 @@
     "dist": "babel src --source-maps inline --out-dir lib",
     "test": "npm run lint && npm run tape | faucet",
     "tape": "babel-tape-runner 'test/**/*Test.js'",
-    "lint": "eslint src test"
+    "lint": "eslint src test examples"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "babel-tape-runner": "1.2.0",
     "baconjs": "0.7.75",
     "eslint": "1.6.0",
+    "eslint-plugin-react": "^3.8.0",
     "faucet": "0.0.1",
     "tape": "4.2.1"
   }

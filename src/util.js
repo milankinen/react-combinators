@@ -1,5 +1,3 @@
-import Bacon from "baconjs"
-
 
 export default {
   keys, values, zipObject, zip, isArray, isEmpty, contains, find

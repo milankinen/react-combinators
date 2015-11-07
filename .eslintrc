@@ -3,9 +3,11 @@
   "extends": "eslint:recommended",
   "rules": {
     "no-console": 0,
+    "no-unused-vars": [2, {"varsIgnorePattern": "^React$"}],
     "semi": [2, "never"],
     "quotes": [2, "double"]
   },
+  "plugins": ["react"],
   "env": {
     "node": true,
     "browser": true

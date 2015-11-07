@@ -31,7 +31,7 @@ import {keys, values, zip, zipObject} from "../util"
 export default function createComponent(renderFn) {
   return React.createClass({
     getInitialState() {
-      const propsBuses = zipObject(keys(this.props), values(this.props).map(val => new Bacon.Bus()))
+      const propsBuses = zipObject(keys(this.props), values(this.props).map(() => new Bacon.Bus()))
 
       const propsS =
         zipObject(keys(this.props), zip(values(propsBuses), values(this.props)).map(([bus, initial]) => (
