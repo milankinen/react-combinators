@@ -1,0 +1,49 @@
+import Bacon from "baconjs"
+import {createElement, isValidElement, cloneAndReplaceProps} from "react/lib/ReactElement"
+import Wrapper from "./Wrapper"
+import {contains, isEmpty, isArray, keys} from "../util"
+
+
+export default function obsdom(vdom) {
+  return (function wrap(el) {
+    if (isObs(el)) {
+      return createElement(Wrapper, {}, el)
+    }
+    const isComponent = typeof el.type === "function"
+    const obs = [], props = {}
+    const propKeys = keys(el.props)
+    for (let k = 0 ; k < propKeys.length ; k++) {
+      const key = propKeys[k]
+      const prop = el.props[key]
+      if (key === "children") {
+        props[key] = isArray(prop) ? prop.map(wrap) : wrap(prop)
+      } else {
+        if (!isComponent && isObs(prop) && !contains(obs, prop)) {
+          obs.push(prop)
+        }
+        props[key] = prop
+      }
+    }
+    if (!isEmpty(obs)) {
+      const obsEl = Bacon.combineAsArray(obs).map(values => {
+        const newProps = {}
+        for (let k = 0 ; k < propKeys.length ; k++) {
+          const key = propKeys[k]
+          const prop = props[key]
+          newProps[key] = isObs(prop) ? values[obs.indexOf(prop)] : prop
+        }
+        return cloneAndReplaceProps(el, newProps)
+      })
+      return createElement(Wrapper, {}, obsEl)
+    } else if (el.type !== undefined) {
+      return cloneAndReplaceProps(el, props)
+    } else {
+      return el
+    }
+  })(vdom)
+}
+
+
+function isObs(x) {
+  return x && x instanceof Bacon.Observable
+}
