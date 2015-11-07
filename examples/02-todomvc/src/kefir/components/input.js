@@ -1,6 +1,6 @@
 import React from "react"
-import {Model} from "bacon.model"
-import {Combinator, createComponent} from "react-combinators/baconjs"
+import {Model} from "../model"
+import {Combinator, createComponent} from "react-combinators/kefir"
 
 // in reactive components, passed properties are observables
 // and the returned value must be an observable that contains the
