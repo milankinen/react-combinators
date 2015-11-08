@@ -51,8 +51,8 @@ function Reddit(initial) {
   return { reddit, posts, loading, setReddit }
 }
 
-// no containers are needed! reactive properties and combinators handle that
-// UI syncs with state
+// no containers are needed! observables and combinators handle that the
+// UI syncs with the state
 function App({model}) {
   const { reddit, posts, loading, setReddit } = model
 
