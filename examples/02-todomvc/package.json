@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "rx": "browserify rx.js -t babelify > bundle.js && open index.html",
     "baconjs": "browserify bacon.js -t babelify > bundle.js && open index.html",
     "kefir": "browserify kefir.js -t babelify > bundle.js && open index.html",
     "watch": "watchify -v -t babelify -o bundle.js"
@@ -19,6 +20,7 @@
     "react": "0.14.1",
     "react-combinators": "file:../..",
     "react-dom": "0.14.1",
+    "rx": "^4.0.6",
     "todomvc-app-css": "1.x.x",
     "todomvc-common": "1.x.x"
   },
