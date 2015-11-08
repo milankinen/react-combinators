@@ -14,10 +14,8 @@ a difficult: every observable must be subscribed and disposed separately with th
 component's lifecycle hooks. Such boilerplate!
 
 The goal of this project is to enable seamless combination of React and observable 
-by introducing **React Observable Combinators**. With these combinators, user interfaces
-can be build **declaratively** so that the UI just reflects the state. 
-
-Say hello to truly reactive and declarative React app development!
+by introducing **React Observable Combinators**.  Say hello to truly reactive and 
+declarative React app development!
 
 ## Example
 
