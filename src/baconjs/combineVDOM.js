@@ -3,15 +3,7 @@ import {cloneAndReplaceProps, isValidElement} from "react/lib/ReactElement"
 import Combinator from "./Combinator"
 import {contains, isEmpty, isArray, zip, find} from "../util"
 
-/**
- *  Transforms: VDOM(Observable) => Observable(VDOM)
- *  Example:
- *    const a = Bacon.constant(4)
- *    const b = Bacon.constant(3)
- *    const c = Bacon.combineWith(a, b, (a, b) => a + b)
- *
- *    combineVDOM(<div>{a} + {b} = <span className="result">{c}</span></div>)
- */
+
 export default function combineVDOM(vdom) {
   const obs = resolveObservables(vdom, [])
   if (isEmpty(obs)) {
