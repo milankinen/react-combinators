@@ -5,7 +5,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "rx": "browserify rx.js -t babelify > bundle.js && open index.html",
     "baconjs": "browserify bacon.js -t babelify > bundle.js && open index.html",
+    "kefir": "browserify kefir.js -t babelify > bundle.js && open index.html",
     "watch": "watchify -v -t babelify -o bundle.js"
   },
   "dependencies": {
@@ -14,7 +16,8 @@
     "kefir": "^3.1.0",
     "react": "0.14.1",
     "react-combinators": "file:../..",
-    "react-dom": "0.14.1"
+    "react-dom": "0.14.1",
+    "rx": "4.0.6"
   },
   "engines": {
     "node": "4.2.x"
