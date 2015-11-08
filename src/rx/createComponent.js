@@ -10,7 +10,7 @@ export default function createComponent(renderFn) {
 
       const propsS =
         zipObject(keys(this.props), zip(values(propsSubjects), values(this.props)).map(([subject, initial]) => (
-          subject.startWith(initial).distinctUntilChanged()
+          subject.startWith(initial).distinctUntilChanged().share()
         )))
 
       return {
