@@ -1,6 +1,6 @@
 # React Combinators
 
-Seamless combination of React and reactive programming with (Kefir / Bacon.js).
+Seamless combination of React and reactive programming with (RxJs / Kefir / Bacon.js).
 
 [![npm version](https://badge.fury.io/js/react-combinators.svg)](http://badge.fury.io/js/react-combinators)
 [![Build Status](https://travis-ci.org/milankinen/react-combinators.svg)](https://travis-ci.org/milankinen/react-combinators)
@@ -94,6 +94,7 @@ render(<App model={myReddit} />, document.getElementById("app"))
 
 Currently supported FRP libraries are 
 
+* `rx`
 * `baconjs`
 * `kefir` 
 
