@@ -3,7 +3,7 @@ import {Subject, Observable} from "rx"
 import {render} from "react-dom"
 import {Combinator} from "react-combinators/rx"
 
-
+// lets define our "reactive" model with observables
 function model(initialHeight, initialWeight) {
   const setHeight = createAction()
   const setWeight = createAction()

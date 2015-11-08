@@ -3,7 +3,7 @@ import Kefir from "kefir"
 import {render} from "react-dom"
 import {Combinator} from "react-combinators/kefir"
 
-
+// lets define our "reactive" model with observables
 function model(initialHeight, initialWeight) {
   const setHeight = createAction()
   const setWeight = createAction()

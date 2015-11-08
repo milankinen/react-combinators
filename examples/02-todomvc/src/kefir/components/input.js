@@ -6,8 +6,8 @@ import {Combinator, createComponent} from "react-combinators/kefir"
 // and the returned value must be an observable that contains the
 // rendered JSX
 export default createComponent(({model}) => model.map(({addItem}) => {
-  // if components must contain their own "state", it can be declared by using
-  // by using
+  // if components must contain their own "state", it can be declared as observables
+  // in a similar ways you declare your application's state
   const text = Model("")
   const handleEsc = text.map(txt => e => {
     if (e.which === 13 && txt) {
