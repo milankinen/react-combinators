@@ -103,7 +103,7 @@ All API functions and components are implemented for each supported FRP
 library and they are accessible through:
 
 ```javascript
-const {<functions/components...>} = require("react-combinators/baconjs")
+const {<functions/components...>} = require("react-combinators/<your-frp-library>")
 ```
 
 ### `<Combinator>`
