@@ -70,7 +70,7 @@ export function Model(initial) {
   const subject = new Subject()
   const model = subject.startWith(initial).scan((state, fn) => fn(state)).shareReplay()
   model.subscribe(val => current = val)
-  model.set = val => subject.onNext(_ => val)
+  model.set = val => subject.onNext(() => val)
   model.get = () => current
   model.modify = fn => subject.onNext(fn)
   return model

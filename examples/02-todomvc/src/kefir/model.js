@@ -70,7 +70,7 @@ export function Model(initial) {
   const pool = Kefir.pool()
   const model = pool.scan((state, fn) => fn(state), initial).toProperty()
   model.onValue(val => current = val)
-  model.set = val => pool.plug(Kefir.constant(_ => val))
+  model.set = val => pool.plug(Kefir.constant(() => val))
   model.get = () => current
   model.modify = fn => pool.plug(Kefir.constant(fn))
   return model

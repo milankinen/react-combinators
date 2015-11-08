@@ -1,4 +1,4 @@
-import {Observable, Subject} from "rx"
+import {Subject} from "rx"
 import React from "react"
 import {keys, values, zip, zipObject} from "../util"
 
