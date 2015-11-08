@@ -60,12 +60,3 @@ export function Todo({text = "", status = "active", id = Date.now()}) {
   const setStatus = status => fields.modify(fields => ({...fields, status}))
   return { id, fields, setText, setStatus }
 }
-
-
-
-export function createAction() {
-  const bus = new Bacon.Bus()
-  const creator = (val) => bus.push(val)
-  creator.$ = bus
-  return creator
-}
