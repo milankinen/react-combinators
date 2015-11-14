@@ -13,7 +13,7 @@ export function testExample(example, testCase) {
     test(`run example "${example}" with "${lib}"`, t => {
       t.comment("example initialization")
       execInExampleDir(example, `./node_modules/.bin/browserify ${lib}.js -t babelify > bundle.js`)
-      const browser = new Browser()
+      const browser = polyfillBrowser(new Browser())
       Promise.resolve(browser.visit("file://" + getExampleDir(example) + "/index.html"))
         .then(() => browser.assert.success())
         .then(() => await(500))
@@ -28,6 +28,17 @@ export function await(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
+function polyfillBrowser(browser) {
+  browser.keyDown = function (targetSelector, keyCode) {
+    const e = this.window.document.createEvent("HTMLEvents")
+    e.initEvent("keydown", true, true)
+    e.which = e.keyCode = keyCode
+    const target = this.window.document.querySelector(targetSelector)
+    target && target.dispatchEvent(e)
+    return this._wait(null)
+  }
+  return browser
+}
 
 function execInExampleDir(example, cmd) {
   const dir = getExampleDir(example)
