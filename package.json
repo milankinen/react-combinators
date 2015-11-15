@@ -1,6 +1,6 @@
 {
   "name": "react-combinators",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Seamless combination of React and reactive programming",
   "main": "index.js",
   "scripts": {
