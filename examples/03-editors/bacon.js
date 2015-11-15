@@ -47,11 +47,11 @@ function App() {
             <option value="counter">Counter</option>
             <option value="name">Name</option>
           </select>
-          <button onClick={addEditor}>Add</button>
+          <button id="add" onClick={addEditor}>Add</button>
         </div>
         <div>
           {editors.map(editors => editors.map(({editor, render}) => (
-            [<hr />, render(editor)]
+            render(editor)
           )))}
         </div>
       </div>
@@ -62,8 +62,10 @@ function App() {
 function renderCounter({value, inc, dec}) {
   return (
     <Combinator>
-      <div>
-        {value} <button onClick={inc}>+</button><button onClick={dec}>-</button>
+      <div className="counter">
+        <span className="val">{value}</span>
+        <button className="inc" onClick={inc}>+</button>
+        <button className="dec" onClick={dec}>-</button>
       </div>
     </Combinator>
   )

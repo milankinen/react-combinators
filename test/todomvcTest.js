@@ -13,7 +13,6 @@ testExample("02-todomvc", (t, browser) => {
       browser.assert.text("#todo-list li:last-child label", "some text")
       browser.assert.text("#todo-count", "2 items left")
       browser.assert.elements("#todo-list li", 2)
-
     })
     .then(() => {
       t.comment("test that toggling item status works")
