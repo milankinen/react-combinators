@@ -9,6 +9,9 @@ const FRP_LIBS = ["rx", "bacon", "kefir"]
 
 export function testExample(example, testCase) {
   execInExampleDir(example, "npm i")
+  // this ensures that latest codes from react-combinators get installed
+  execInExampleDir(example, "npm i react-combinators@file:../..")
+
   FRP_LIBS.forEach(lib => {
     test(`run example "${example}" with "${lib}"`, t => {
       t.comment("example initialization")
