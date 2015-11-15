@@ -15,7 +15,7 @@
     "baconjs": "0.7.79",
     "kefir": "3.1.0",
     "react": "0.14.1",
-    "react-combinators": "latest",
+    "react-combinators": "file:../..",
     "react-dom": "0.14.1",
     "rx": "4.0.6"
   },

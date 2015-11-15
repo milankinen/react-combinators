@@ -109,7 +109,7 @@ const {<functions/components...>} = require("react-combinators/<your-frp-library
 ### `<Combinator>`
 
 Higher order component that collects the observables from its child elements
-and them with the surrounding virtual dom. Combinator comonents should be 
+and them with the surrounding virtual dom. Combinator components should be 
 used at the top-level of your React component.
 
 Usage:

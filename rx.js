@@ -1,7 +1,4 @@
+var createExports = require("./lib/createExports")
+var bindings = require("./lib/bindings/rx")
 
-module.exports = {
-  Combinator: require("./lib/rx/Combinator"),
-  combineVDOM: require("./lib/rx/combineVDOM"),
-  createComponent: require("./lib/rx/createComponent")
-}
-
+module.exports = createExports(bindings)

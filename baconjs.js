@@ -1,7 +1,4 @@
+var createExports = require("./lib/createExports")
+var bindings = require("./lib/bindings/baconjs")
 
-module.exports = {
-  Combinator: require("./lib/baconjs/Combinator"),
-  combineVDOM: require("./lib/baconjs/combineVDOM"),
-  createComponent: require("./lib/baconjs/createComponent")
-}
-
+module.exports = createExports(bindings)

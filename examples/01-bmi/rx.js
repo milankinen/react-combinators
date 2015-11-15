@@ -27,7 +27,7 @@ function App() {
         {renderSlider("Height", height, setHeight, 100, 240)}
         {renderSlider("Weight", weight, setWeight, 40, 150)}
         {/* and here we can embed the observables directly into the JSX */}
-        Your BMI is: {bmi}
+        Your BMI is: <span className="bmi">{bmi}</span>
       </div>
     </Combinator>
   )
@@ -37,7 +37,7 @@ function renderSlider(title, value, setValue, min, max) {
   return (
     <div>
       {title}: {value} <br />
-      <input type="range" min={min} max={max} value={value}
+      <input type="range" min={min} max={max} value={value} className={title}
              onChange={e => setValue(e.target.value)} />
     </div>
   )
