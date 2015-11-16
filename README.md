@@ -108,9 +108,9 @@ const {<functions/components...>} = require("react-combinators/<your-frp-library
 
 ### `<Combinator>`
 
-Higher order component that collects the observables from its child elements
-and them with the surrounding virtual dom. Combinator components should be 
-used at the top-level of your React component.
+Higher order component that "wraps" the observables from its children and returns 
+a virtual dom element that gets updated by changes in any of its child elements.
+Combinator components should be used at the top-level of your React component.
 
 Usage:
 
