@@ -18,7 +18,7 @@ export function testExample(example, testCase) {
       const browser = polyfillBrowser(new Browser())
       Promise.resolve(browser.visit("file://" + getExampleDir(example) + "/index.html"))
         .then(() => browser.assert.success())
-        .then(() => await(500))
+        .then(() => awaitMs(500))
         .then(() => testCase(t, browser))
         .finally(() => t.end())
         .done()
@@ -26,7 +26,7 @@ export function testExample(example, testCase) {
   })
 }
 
-export function await(ms) {
+export function awaitMs(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 

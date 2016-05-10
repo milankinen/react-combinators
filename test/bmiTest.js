@@ -1,4 +1,4 @@
-import {testExample, await} from "./helpers"
+import {testExample, awaitMs} from "./helpers"
 
 
 testExample("01-bmi", (t, browser) => {
@@ -6,7 +6,7 @@ testExample("01-bmi", (t, browser) => {
   browser.assert.input("input.Height", 180)
   browser.assert.text(".bmi", "25")
   browser.fill("input.Height", 200)
-  return await(50).then(() => {
+  return awaitMs(50).then(() => {
     t.comment("test changed values")
     browser.assert.input("input.Height", 200)
     browser.assert.text(".bmi", "20")

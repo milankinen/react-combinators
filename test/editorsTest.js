@@ -1,4 +1,4 @@
-import {testExample, await} from "./helpers"
+import {testExample, awaitMs} from "./helpers"
 
 
 testExample("03-editors", (t, browser) => {
@@ -9,7 +9,7 @@ testExample("03-editors", (t, browser) => {
   browser.click("#add")
   browser.click("#add")
 
-  return await(50)
+  return awaitMs(50)
     .then(() => {
       t.comment("test that counters were created")
       browser.assert.text("h1", "Editors 2")
