@@ -7,15 +7,15 @@ function Counter(initial) {
   const inc = createAction()
   const dec = createAction()
   const step = inc.$.map(() => 1).merge(dec.$.map(() => -1))
-  const value = step.startWith(initial).scan((state, step) => state + step).shareReplay()
+  const value = step.startWith(initial).scan((state, step) => state + step).shareReplay(1)
   return { value, inc, dec }
 }
 
 function Name(initialFirst, initialLast) {
   const setFirst = createAction()
   const setLast = createAction()
-  const first = setFirst.$.startWith(initialFirst).shareReplay()
-  const last = setLast.$.startWith(initialLast).shareReplay()
+  const first = setFirst.$.startWith(initialFirst).shareReplay(1)
+  const last = setLast.$.startWith(initialLast).shareReplay(1)
   return { first, last, setFirst, setLast }
 }
 
@@ -30,14 +30,14 @@ function App() {
         name: {create: () => Name("Foo", "Bar"), render: renderNameEditor}
       })[id])
       .startWith({create: () => Counter(0), render: renderCounter})
-      .shareReplay()
+      .shareReplay(1)
 
   const editors =
     addEditor.$
       .withLatestFrom(selection, (_, sel) => sel)
       .startWith([])
       .scan((editors, {create, render}) => [...editors, {editor: create(), render}])
-      .share()
+      .shareReplay(1)
 
   const numEditors =
     editors.map(editors => editors.length)

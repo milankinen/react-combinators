@@ -9,7 +9,7 @@ export default createComponent(({model}) => model.map(({items, setStatusForAllIt
     items
       .map(items => items.map(it => it.fields.map(f => f.status === "completed")))
       .flatMapLatest(completed => Observable.combineLatest(...completed).share())
-      .map(completed => _.all(completed))
+      .map(completed => _.every(completed))
 
   return (
     <Combinator>

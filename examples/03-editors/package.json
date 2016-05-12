@@ -11,20 +11,19 @@
     "watch": "watchify -v -t babelify -o bundle.js"
   },
   "dependencies": {
-    "babel": "5.8.29",
-    "baconjs": "0.7.79",
-    "kefir": "3.1.0",
-    "react": "0.14.1",
+    "babel": "^6.5.2",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "baconjs": "^0.7.84",
+    "browserify": "^13.0.1",
+    "kefir": "^3.2.2",
+    "react": "^15.0.2",
     "react-combinators": "file:../..",
-    "react-dom": "0.14.1",
-    "rx": "4.0.6"
+    "react-dom": "^15.0.2",
+    "rx": "^4.1.0",
+    "watchify": "^3.7.0"
   },
   "engines": {
     "node": "4.2.x"
-  },
-  "devDependencies": {
-    "babelify": "6.4.0",
-    "browserify": "12.0.1",
-    "watchify": "3.6.0"
   }
 }

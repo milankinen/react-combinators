@@ -7,11 +7,11 @@ import {Combinator} from "react-combinators/rx"
 function model(initialHeight, initialWeight) {
   const setHeight = createAction()
   const setWeight = createAction()
-  const height = setHeight.$.startWith(initialHeight).share()
-  const weight = setWeight.$.startWith(initialWeight).share()
+  const height = setHeight.$.startWith(initialHeight).shareReplay(1)
+  const weight = setWeight.$.startWith(initialWeight).shareReplay(1)
   const bmi = Observable.combineLatest(weight, height, (w, h) => (
     Math.round(w / (h * h * 0.0001))
-  )).share()
+  )).shareReplay(1)
 
   // yeah. model is just a pure factory function that returns plain object
   return { setHeight, setWeight, height, weight, bmi }

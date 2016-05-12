@@ -11,25 +11,24 @@
     "watch": "watchify -v -t babelify -o bundle.js"
   },
   "dependencies": {
-    "babel": "5.8.29",
-    "bacon.model": "0.1.12",
-    "baconjs": "0.7.79",
-    "classnames": "2.2.0",
-    "kefir": "3.1.0",
-    "lodash": "3.10.1",
-    "react": "0.14.1",
+    "babel": "^6.5.2",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "bacon.model": "^0.1.12",
+    "baconjs": "^0.7.84",
+    "browserify": "^13.0.1",
+    "classnames": "^2.2.5",
+    "kefir": "^3.2.2",
+    "lodash": "^4.12.0",
+    "react": "^15.0.2",
     "react-combinators": "file:../..",
-    "react-dom": "0.14.1",
-    "rx": "4.0.6",
+    "react-dom": "^15.0.2",
+    "rx": "^4.1.0",
     "todomvc-app-css": "1.x.x",
-    "todomvc-common": "1.x.x"
+    "todomvc-common": "1.x.x",
+    "watchify": "^3.7.0"
   },
   "engines": {
     "node": "4.2.x"
-  },
-  "devDependencies": {
-    "babelify": "6.4.0",
-    "browserify": "12.0.1",
-    "watchify": "3.6.0"
   }
 }

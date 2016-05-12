@@ -24,16 +24,16 @@ export function Todos(initialItems) {
   }
 
   const itemsWithCurrentStatus =
-    items.flatMapLatest(getItemsWithStatus).share()
+    items.flatMapLatest(getItemsWithStatus).shareReplay(1)
 
   const displayedItems = Observable.combineLatest(itemsWithCurrentStatus, filter,
     (todos, f) => todos.filter(({status}) => !f || status === f).map(({item}) => item)
   ).share()
 
-  const totalItems = items.map(items => items.length).share()
+  const totalItems = items.map(items => items.length).shareReplay(1)
 
   const itemsLeft =
-    itemsWithCurrentStatus.map(items => items.filter(({status}) => status === "active").length).share()
+    itemsWithCurrentStatus.map(items => items.filter(({status}) => status === "active").length).shareReplay(1)
 
   return {
     items,
@@ -68,7 +68,7 @@ export function Todo({text = "", status = "active", id = Date.now()}) {
 export function Model(initial) {
   let current = undefined
   const subject = new Subject()
-  const model = subject.startWith(initial).scan((state, fn) => fn(state)).shareReplay()
+  const model = subject.startWith(initial).scan((state, fn) => fn(state)).shareReplay(1)
   model.subscribe(val => current = val)
   model.set = val => subject.onNext(() => val)
   model.get = () => current

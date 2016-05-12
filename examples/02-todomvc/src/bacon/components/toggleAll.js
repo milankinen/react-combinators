@@ -9,7 +9,7 @@ export default createComponent(({model}) => model.map(({items, setStatusForAllIt
     items
       .map(items => items.map(it => it.fields.map(".status").map(s => s === "completed")))
       .flatMapLatest(Bacon.combineAsArray)
-      .map(_.all)
+      .map(_.every)
 
   return (
     <Combinator>
