@@ -3,15 +3,15 @@ export default {
   keys, values, zipObject, zip, isArray, isEmpty, contains, find
 }
 
-function isArray(x) {
+export function isArray(x) {
   return x && x.constructor === Array
 }
 
-function isEmpty(x) {
+export function isEmpty(x) {
   return !x || x.length === 0
 }
 
-function contains(arr, val) {
+export function contains(arr, val) {
   if (arr) {
     for (let i = 0 ; i < arr.length ; i++) {
       if (arr[i] === val) return true
@@ -20,7 +20,7 @@ function contains(arr, val) {
   return false
 }
 
-function find(arr, predicate) {
+export function find(arr, predicate) {
   if (arr) {
     for (let i = 0 ; i < arr.length ; i++) {
       if (predicate(arr[i])) return arr[i]
@@ -28,11 +28,11 @@ function find(arr, predicate) {
   }
 }
 
-function keys(obj = {}) {
+export function keys(obj = {}) {
   return Object.keys(obj)
 }
 
-function values(obj) {
+export function values(obj) {
   const k = keys(obj)
   const result = []
   for (let i = 0 ; i < k.length; i++) {
@@ -44,7 +44,7 @@ function values(obj) {
   return result
 }
 
-function zipObject(keys, values) {
+export function zipObject(keys, values) {
   const result = {}
   for (let i = 0 ; i < keys.length ; i++) {
     result[keys[i]] = values[i]
@@ -52,7 +52,7 @@ function zipObject(keys, values) {
   return result
 }
 
-function zip(...arrays) {
+export function zip(...arrays) {
   const len = Math.max(...arrays.map(a => a.length))
   const result = []
   for (let i = 0 ; i < len ; i++) {

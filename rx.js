@@ -1,4 +1,4 @@
-var createExports = require("./lib/createExports")
-var bindings = require("./lib/bindings/rx")
+var createExports = require("./lib/createExports").default
+var bindings = require("./lib/bindings/rx").default
 
 module.exports = createExports(bindings)
