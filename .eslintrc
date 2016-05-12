@@ -3,7 +3,7 @@
   "extends": "eslint:recommended",
   "rules": {
     "no-console": 0,
-    "no-unused-vars": [2, {"varsIgnorePattern": "^React$"}],
+    "no-unused-vars": 0,
     "semi": [2, "never"],
     "quotes": [2, "double"]
   },
@@ -11,5 +11,10 @@
   "env": {
     "node": true,
     "browser": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
   }
 }

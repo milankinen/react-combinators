@@ -32,7 +32,7 @@ export default ({createEventBus, pushToEventBus, take, startWith, skipDuplicates
           if (!bus) {
             console.warn(
               `Trying to pass property "${propName}" that is not set during the component creation.`,
-              `Ignoring this property.`
+              "Ignoring this property."
             )
           } else {
             pushToEventBus(bus, nextProps[propName])
