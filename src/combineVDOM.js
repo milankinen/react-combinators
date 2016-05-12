@@ -1,4 +1,4 @@
-import {cloneAndReplaceProps, isValidElement} from "react/lib/ReactElement"
+import {cloneElement, isValidElement} from "react/lib/ReactElement"
 import {contains, isEmpty, isArray, zip, find} from "./util"
 import Combinator from "./Combinator"
 
@@ -65,7 +65,7 @@ export default ({constant, combineAsArray, isObservable, map}) => {
           }
         }
       }
-      return cloneAndReplaceProps(el, newProps)
+      return cloneElement(el, newProps)
     }
   }
 }
