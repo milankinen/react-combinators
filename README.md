@@ -5,6 +5,12 @@ Seamless combination of React and reactive programming with (RxJs / Kefir / Baco
 [![npm version](https://badge.fury.io/js/react-combinators.svg)](http://badge.fury.io/js/react-combinators)
 [![Build Status](https://travis-ci.org/milankinen/react-combinators.svg)](https://travis-ci.org/milankinen/react-combinators)
 
+**THIS LIBRARY IS NOT MAINTAINED ANYMORE**
+
+If you are interested in doing applications with React and observables, please see:
+
+* [`calmm-js`](https://github.com/calmm-js) powerful toolset for state management and rendering with React and observables (Kefir & Bacon atm) 
+* [`react.reactive`](https://github.com/milankinen/react-reactive-toolkit) calmm-js rendering part extracted and made streaming library agnostic 
 
 ## Motivation
 
